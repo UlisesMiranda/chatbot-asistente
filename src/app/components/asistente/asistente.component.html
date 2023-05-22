@@ -13,6 +13,19 @@
             (click)="realizarTextoVoz()"
     >Envia</button>
   </form>
+
+  <h1>Reconocimiento de Voz</h1>
+  <div>
+    <button mat-button (click)="startRecognition()">Iniciar reconocimiento</button>
+    <button mat-button (click)="stopRecognition()">Detener reconocimiento</button>
+  </div>
+
+  <div *ngFor="let palabra of recognizedByWords">{{palabra}}</div>
+  <p>texto: {{ recognizedText }}</p>
+
+  <button mat-button (click)="speakText()">Reproducir texto</button>
+
+
 </div>
 
 

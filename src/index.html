@@ -10,7 +10,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body class="mat-typography mat-app-background" data-theme="cupcake">
+<body class="mat-typography mat-app-background">
   <app-root></app-root>
+  <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+  <script>
+    window.botpressWebChat.init({
+      "botId": "3da24938-458b-4904-ab28-ad71ded6e4b9",
+      "hostUrl": "https://cdn.botpress.cloud/webchat/v0",
+      "messagingUrl": "https://messaging.botpress.cloud",
+      "clientId": "3da24938-458b-4904-ab28-ad71ded6e4b9",
+      "botName": "Mr-bot",
+      "botConversationDescription": "IngeBot de ESCOM",
+      "useSessionStorage": true,
+      "showBotInfoPage": true
+    });
+  </script>
 </body>
 </html>
