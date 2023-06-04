@@ -1,28 +1,34 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {JSONFile} from "@angular/cli/src/utilities/json-file";
 
 @Injectable({
   providedIn: 'root'
 })
-export class BotpressService {
-  private apiUrl = 'https://api.botpress.cloud/v1/chat/events';
+export class RasaService {
+  private apiUrl = 'http://localhost:5005/webhooks/rest/webhook';
   token = "bp_pat_b8eBdrNqGlPdb8K4NCGvsb1AObQKnwEhKHzD"
 
   constructor(
     private http: HttpClient
-  ) { }
+  ){ }
 
-  crearMensaje(): Observable<any> {
+  enviarMensaje(mensaje: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${this.token}`,
-      'x-bot-id': `3da24938-458b-4904-ab28-ad71ded6e4b9`
     })
 
     const options = { headers: headers };
 
+    const mensajeJSON = {
+      "sender": "shine",
+      "message": mensaje
+    }
+
     const url = this.apiUrl;
-    return this.http.get(url, options);
+    return this.http.post(url, mensajeJSON, options);
+
   }
 }
+

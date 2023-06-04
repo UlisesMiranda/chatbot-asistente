@@ -10,22 +10,26 @@ import {MatButtonModule} from "@angular/material/button";
 import {HttpClientModule} from "@angular/common/http";
 import {MatInputModule} from "@angular/material/input";
 import {ReactiveFormsModule} from "@angular/forms";
+import {MatIconModule} from "@angular/material/icon";
+import {PromedioComponent} from "./components/promedio/promedio.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatbotComponent,
-    AsistenteComponent
+    AsistenteComponent,
+    PromedioComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    HttpClientModule,
-    MatInputModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        HttpClientModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        MatIconModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

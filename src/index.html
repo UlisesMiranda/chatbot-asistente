@@ -9,8 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="bot.css">
 </head>
-<body class="mat-typography mat-app-background">
+<body>
+
   <app-root></app-root>
   <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
   <script>
@@ -19,11 +24,25 @@
       "hostUrl": "https://cdn.botpress.cloud/webchat/v0",
       "messagingUrl": "https://messaging.botpress.cloud",
       "clientId": "3da24938-458b-4904-ab28-ad71ded6e4b9",
-      "botName": "Mr-bot",
-      "botConversationDescription": "IngeBot de ESCOM",
+      "botName": "MR BOT",
+      "botConversationDescription": "Bot dedicado a responder preguntas sobre gestión escolar en ESCOM",
       "useSessionStorage": true,
-      "showBotInfoPage": true
+      "showBotInfoPage": true,
+      "showCloseButton": false,
+      "containerWidth": "50%25",
+      "layoutWidth": "50%25",
+      "hideWidget": true,
+      "disableAnimations": true,
+      "stylesheet": "https://css-bh304tmbp-ulisesmiranda.vercel.app/bot.css",
+      "locale": "es",
+      "avatarUrl": "https://css-bh304tmbp-ulisesmiranda.vercel.app/MRrobot.png"
     });
+    window.botpressWebChat.onEvent(
+      function () {
+        window.botpressWebChat.sendEvent({ type: "show" });
+      },
+      ["LIFECYCLE.LOADED"]
+    );
   </script>
 </body>
 </html>

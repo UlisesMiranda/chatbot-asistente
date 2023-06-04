@@ -1,0 +1,21 @@
+<div class="flex flex-col gap-3 m-4">
+  <div class="text-2xl">
+    Servicio web - Promedios
+  </div>
+  <mat-form-field [formGroup]="listaForm" class="flex flex-col gap-2 mt-4">
+    <mat-label >
+      Escriba su lista de numeros, separados por una 'coma':
+    </mat-label >
+    <input matInput type="text" formControlName="lista" class="w-fit">
+
+  </mat-form-field>
+  <button mat-button mat-flat-button class="w-fit" color="primary"
+          (click)="obtenerPromedio()"
+  >
+    Enviar
+  </button>
+  <div class="flex gap-3">
+    <div class="font-semibold">Promedio obtenido:</div>
+    <div>{{promedioResultante}}</div>
+  </div>
+</div>

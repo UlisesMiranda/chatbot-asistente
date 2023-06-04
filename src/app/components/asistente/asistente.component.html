@@ -1,29 +1,53 @@
-<div class="w-full flex flex-col">
-  <div class="text-2xl text-center">
-    Este es el asistente
-  </div>
-  <form [formGroup]="asistenteForm" class="flex flex-col">
-    <mat-form-field>
-      <mat-label>
-        texto
-      </mat-label>
-      <input matInput formControlName="texto">
-    </mat-form-field>
-    <button mat-flat-button
-            (click)="realizarTextoVoz()"
-    >Envia</button>
-  </form>
+<div class="w-full flex flex-col justify-center items-center">
 
-  <h1>Reconocimiento de Voz</h1>
-  <div>
-    <button mat-button (click)="startRecognition()">Iniciar reconocimiento</button>
-    <button mat-button (click)="stopRecognition()">Detener reconocimiento</button>
+  <div class="mt-4 z-10 w-full h-32 bg-contain bg-center bg-no-repeat"
+       style="background-image: url('./assets/images/MR bot logo.png')"
+  ></div>
+  <div class="mt-3 flex justify-center items-center text-center font-light py-4 w-full bg-[#01538E]">
+    <p class="text-white text-xl w-[500px] ">
+      Un bot destinado a responder las preguntas más frecuentes sobre ESCOM
+      y sobre Gestión Escolar
+    </p>
   </div>
 
-  <div *ngFor="let palabra of recognizedByWords">{{palabra}}</div>
-  <p>texto: {{ recognizedText }}</p>
+  <div class="mt-3 text-center w-[600px] leading-loose font-light">
+    <p class="">
+      Interactua con el asistente MR BOT para conocer ESCOM y si tienes una duda
+      sobre Gestión Escolar, por favor utiliza nuestro Chatbot.
+    </p>
+  </div>
 
-  <button mat-button (click)="speakText()">Reproducir texto</button>
+  <div class="mt-8 flex flex-col gap-3">
+    <div class="flex gap-6 items-center">
+      <div class="flex flex-col justify-center items-center gap-2">
+        <button  class="rounded-full bg-[#699BF7] w-[100px] h-[100px] active:bg-blue-500 hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 "
+                 [disabled]="microLoad"
+                 (click)="startRecognition()"
+        >
+          <i class="fa-solid fa-microphone fa-2xl" style="color: #ffffff;"></i>
+        </button>
+        <p class="font-extralight text-sm">Di “Hola” a MR BOT</p>
+      </div>
+      <button class="rounded-full  w-[50px] h-[50px] bg-[#D9D9D9] active:bg-gray-500, hover:bg-gray-500 focus:outline-none focus:ring focus:ring-gray-300"
+              [disabled]="stopLoad"
+              (click)="stopRecognition()"
+      >
+        <i class="fa-solid fa-stop fa-xl" style="color: #ffffff;"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="mt-6 flex justify-center flex-col gap-6">
+    <!--<div class="w-[700px] flex flex-col justify-center gap-3">
+      <p class="text-lg">- Tú: <span class="text-gray-400">{{recognizedText}}</span></p>
+    </div>-->
+    <div class="w-[500px] flex flex-col justify-center gap-3">
+      <p class="text-lg">- Mr Bot: </p>
+      <p *ngFor="let respuesta of respuestaBot" class="text-gray-400">
+        {{respuesta}}
+      </p>
+    </div>
+  </div>
 
 
 </div>
