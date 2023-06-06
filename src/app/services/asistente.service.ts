@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AsistenteService {
-  url_py = environment.urlPython;
+  url_py ='http://localhost:5000/'
   constructor(
     private http:HttpClient
   ) {
