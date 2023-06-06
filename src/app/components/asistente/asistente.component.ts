@@ -19,6 +19,8 @@ export class AsistenteComponent implements OnInit {
   stopLoad = true
 
   respuestaBot: string []= []
+
+  loading = true
   constructor(
     private asistenteService: AsistenteService,
     private botpressService: BotpressService,
@@ -67,6 +69,7 @@ export class AsistenteComponent implements OnInit {
 
   stopRecognition() {
     this.recognition.stop();
+    this.microLoad = false
 
     this.rasaService.enviarMensaje(this.recognizedText).subscribe((resp : rasaResponse[])=>{
       console.log(resp)
