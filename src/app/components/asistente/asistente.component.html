@@ -30,7 +30,7 @@
         <p class="font-extralight text-sm">Di “Hola” a MR BOT</p>
       </div>
       <button class="rounded-full w-[50px] h-[50px] bg-[#D9D9D9]"
-              [class] = "microLoad ? 'active:bg-gray-500, hover:bg-gray-500 focus:outline-none focus:ring focus:ring-gray-300' : ''"
+              [class] = "microLoad ? 'bg-red-400 active:bg-red-500, hover:bg-red-500 focus:outline-none focus:ring focus:ring-red-300' : ''"
               [disabled]="stopLoad"
               (click)="stopRecognition()"
       >
@@ -44,6 +44,8 @@
       <p class="text-lg">- Tú: <span class="text-gray-400">{{recognizedText}}</span></p>
     </div>-->
     <div class="w-[700px] flex flex-col justify-center gap-3">
+      <p class="text-lg">Tu mensaje: </p>
+      <p class=" text-gray-400 pb-3" id="transcription"></p>
       <p class="text-lg">- Mr Bot: </p>
       <p *ngFor="let respuesta of respuestaBot" class="text-gray-400 pb-3">
         {{respuesta}}

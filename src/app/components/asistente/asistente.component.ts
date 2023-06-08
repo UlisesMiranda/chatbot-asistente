@@ -39,6 +39,8 @@ export class AsistenteComponent implements OnInit {
       const words = transcript.split(' ');
       this.recognizedByWords = words
       console.log(transcript)
+      const transcriptionElement: HTMLElement = document.getElementById('transcription')!;
+      transcriptionElement.textContent = transcript;
     }
   }
 
