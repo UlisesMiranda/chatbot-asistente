@@ -17,6 +17,7 @@ export class AsistenteComponent implements OnInit {
   recognizedByWords: string[] = []
   microLoad = false
   stopLoad = true
+  preguntasPrueba : string[] = posiblesPreguntas
 
   respuestaBot: string []= []
 
@@ -100,9 +101,23 @@ export class AsistenteComponent implements OnInit {
 
   }
 
+  protected readonly posiblesPreguntas = posiblesPreguntas;
 }
 
 interface rasaResponse {
   recipient_id: string;
   text: string
 }
+
+const posiblesPreguntas: string[] = [
+  "¿Cuál es el acrónimo de ESCOM?",
+  "¿Cuál es la historia de ESCOM",
+  "¿Cuáles son los problemas acádemicos de ESCOM?",
+  "¿Cuál es la misión de ESCOM?",
+  "¿Cuál es la visión de ESCOM?",
+  "¿Qué actividades culturales hay?",
+  "¿De qué trata la carrera en inteligencia artificial?",
+  "¿Qué tramites puedo realizar en gestión escolar?",
+  "¿Cómo puedo tramitar una credencial?",
+  "¿Cómo es el proceso de reinscripción?"
+]
