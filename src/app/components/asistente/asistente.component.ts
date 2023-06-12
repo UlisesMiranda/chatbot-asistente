@@ -112,7 +112,7 @@ interface rasaResponse {
 const posiblesPreguntas: string[] = [
   "¿Cuál es el acrónimo de ESCOM?",
   "¿Cuál es la historia de ESCOM",
-  "¿Cuáles son los problemas acádemicos de ESCOM?",
+  "¿Cuáles son los programas acádemicos de ESCOM?",
   "¿Cuál es la misión de ESCOM?",
   "¿Cuál es la visión de ESCOM?",
   "¿Qué actividades culturales hay?",

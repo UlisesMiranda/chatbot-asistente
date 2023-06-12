@@ -1,6 +1,6 @@
 <div class="w-full flex flex-col justify-center items-center">
 
-  <div class="mt-4 z-10 w-full h-24 bg-contain bg-center bg-no-repeat"
+  <div class="mt-4 z-10 w-full h-20 bg-contain bg-center bg-no-repeat"
        style="background-image: url('./assets/images/MR bot logo.png')"
   ></div>
   <div class="mt-3 flex justify-center items-center text-center font-light py-4 w-full bg-[#01538E]">
@@ -17,12 +17,8 @@
     </p>
   </div>
 
-  <div class="mt-8 flex gap-20">
-    <div>
-      <div class="flex flex-col gap-1 font-light  text-gray-400" *ngFor="let pregunta of posiblesPreguntas">
-        - "{{pregunta}}"
-      </div>
-    </div>
+  <div class="mt-4 flex gap-20 w-full items-center justify-center">
+
     <div>
       <div class="flex gap-6 items-center">
         <div class="flex flex-col justify-center items-center gap-2">
@@ -44,6 +40,12 @@
         </button>
       </div>
     </div>
+    <div class="flex flex-col">
+      <p class="font-light text-gray-500 p-3">Sugerencias:</p>
+      <div class="flex flex-col gap-1 font-light  text-gray-400" *ngFor="let pregunta of posiblesPreguntas">
+        - "{{pregunta}}"
+      </div>
+    </div>
   </div>
 
   <div class="mt-6 flex justify-center flex-col gap-6">
@@ -54,9 +56,12 @@
       <p class="text-lg">Tu mensaje: </p>
       <p class=" text-gray-400 pb-3" id="transcription"></p>
       <p class="text-lg">- Mr Bot: </p>
-      <p *ngFor="let respuesta of respuestaBot" class="text-gray-400 pb-3">
-        {{respuesta}}
-      </p>
+      <div class="pb-4">
+        <p *ngFor="let respuesta of respuestaBot" class="text-gray-400 pb-3">
+          {{respuesta}}
+        </p>
+
+      </div>
     </div>
   </div>
 
