@@ -7,8 +7,8 @@ import {JSONFile} from "@angular/cli/src/utilities/json-file";
   providedIn: 'root'
 })
 export class RasaService {
-  private apiUrl = 'http://localhost:5005/webhooks/rest/webhook';
-  //private apiUrl = ' https://4732-148-204-56-241.ngrok-free.app/webhooks/rest/webhook';
+  //private apiUrl = 'http://localhost:5005/webhooks/rest/webhook';
+  private apiUrl = 'https://f064-148-204-56-241.ngrok-free.app/webhooks/rest/webhook';
   token = "bp_pat_b8eBdrNqGlPdb8K4NCGvsb1AObQKnwEhKHzD"
 
   constructor(
