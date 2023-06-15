@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlPython:'http://localhost:5000/'
+  //urlPython:'http://localhost:5000/'
 };
 
 /*
